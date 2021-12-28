@@ -1,0 +1,8 @@
+org\marinel\util\GameMappings.class
+org\marinel\util\AttributeNames.class
+org\marinel\config\WebConfig.class
+org\marinel\service\GameService.class
+org\marinel\controller\GameController.class
+org\marinel\service\GameServiceImpl.class
+org\marinel\util\ViewNames.class
+org\marinel\WebMain.class

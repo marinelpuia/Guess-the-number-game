@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: headFragment}">
+    <meta charset="UTF-8">
+    <title>Game</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<div class="main_section center">
+    <div class="title_holder">
+        <h1>Guess the Number Game</h1>
+    </div>
+    <div class="div_game_action_holder">
+        <div class="div_main_msg_holder">
+            <h3 th:text="${mainMessage}">Main Message Content</h3>
+        </div>
+        <div class="div_result_msg_holder">
+            <h3 th:text="${resultMessage}">Result Message Content</h3>
+        </div>
+        <div class="div_form_holder">
+            <form action="play" method="post">
+                <label for="guess">Enter your guess:</label>
+                <input id="guess" type="number" name="guess" required="required"/>
+                <input class="submit_btn" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="~{fragments/footer :: footerFragment}">
+    <footer>
+        <div class="div_footer">
+            <p>Created by Marinel</p>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

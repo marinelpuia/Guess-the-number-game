@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: headFragment}">
+    <meta charset="UTF-8">
+    <title>Title content</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<div class="main_section center">
+    <div class="title_holder">
+        <h1>Welcome to Guess the Number Game</h1>
+    </div>
+    <div class="div_game_action_holder">
+        <div class="div_form_holder_home">
+            <form action="home" method="post">
+                <label for="userName">Enter your name:</label>
+                <input id="userName" type="text" name="userName" required="required"/>
+                <input class="submit_and_go_btn" type="submit" value="Play">
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="~{fragments/footer :: footerFragment}">
+    <footer>
+        <div class="div_footer">
+            <p>Created by Marinel!!!</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
