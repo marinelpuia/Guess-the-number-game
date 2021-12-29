@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/head :: headFragment}">
+<html lang="en">
+<head id="head_Id">
     <meta charset="UTF-8">
     <title>Game</title>
-    <link rel="stylesheet" th:href="@{/style.css}"/>
 </head>
 <body>
 <div class="main_section center">
@@ -12,10 +11,10 @@
     </div>
     <div class="div_game_action_holder">
         <div class="div_main_msg_holder">
-            <h3 th:text="${mainMessage}">Main Message Content</h3>
+            <h3 id="main_Message">Main Message Content</h3>
         </div>
         <div class="div_result_msg_holder">
-            <h3 th:text="${resultMessage}">Result Message Content</h3>
+            <h3 id="result_Message">Result Message Content</h3>
         </div>
         <div class="div_form_holder">
             <form action="play" method="post">
@@ -26,13 +25,12 @@
         </div>
     </div>
 </div>
-<div th:replace="~{fragments/footer :: footerFragment}">
+<div id="footer_Id">
     <footer>
         <div class="div_footer">
             <p>Created by Marinel</p>
         </div>
     </footer>
 </div>
-
 </body>
 </html>
