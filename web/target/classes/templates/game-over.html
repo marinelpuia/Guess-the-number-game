@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/head :: headFragment}">
+<html lang="en">
+<head id="head_Id">
     <meta charset="UTF-8">
     <title>Game Finished</title>
 </head>
@@ -14,17 +14,17 @@
             <h2>GAME OVER</h2>
         </div>
         <div class="div_result_msg_holder">
-            <h3 th:text="${resultMessage}">Result Message Content</h3>
+            <h3 id="result_Message">Result Message Content</h3>
         </div>
         <div class="div-restart_btn_holder">
-            <h3><a class="restart_btn" th:href="restart">Play Again</a></h3>
+            <h3><a id="restart_btn_Id" class="restart_btn">Play Again</a></h3>
         </div>
         <div class="div-home_btn_holder">
-            <h3><a class="home_btn" th:href="@{/}" >Home</a></h3>
+            <h3><a id="home_btn_Id" class="home_btn">Home</a></h3>
         </div>
     </div>
 </div>
-<div th:replace="~{fragments/footer :: footer}">
+<div id="footer_Id">
     <footer>
         <div class="div_footer">
             <p>Created by Marinel</p>

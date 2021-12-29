@@ -1,0 +1,7 @@
+<thlogic xmlns:th="http://www.thymeleaf.org">
+    <attr sel="#head_Id" th:replace="~{fragments/head :: headFragment}"/>
+    <attr sel="#result_Message" th:text="${resultMessage}"/>
+    <attr sel="#restart_btn_Id" th:href="restart"/>
+    <attr sel="#home_btn_Id" th:href="@{/}"/>
+    <attr sel="#footer_btn_Id" th:replace="~{fragments/footer :: footer}"/>
+</thlogic>
