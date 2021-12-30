@@ -3,5 +3,8 @@
     <attr sel="#game-title" th:text="#{game.title}"/>
     <attr sel="#main_Message" th:text="${mainMessage}"/>
     <attr sel="#result_Message" th:text="${resultMessage}"/>
+    <attr sel="#enter-guess" th:text="#{game.enter.guess}"/>
+    <attr sel="#submit_btn" th:value="#{game.submit.btn}"/>
     <attr sel="#footer_Id" th:replace="~{fragments/footer :: footer}"/>
+    <attr sel="#copywriter" th:text="#{game.copywriter}"/>
 </thlogic>
