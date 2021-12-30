@@ -7,7 +7,7 @@
 <body>
 <div class="main_section center">
     <div class="title_holder">
-        <h1 id="game-title">Guess the Number Game</h1>
+        <h1 id="game_title">Guess the Number Game</h1>
     </div>
     <div class="div_game_action_holder">
         <div class="div_main_msg_holder">
@@ -18,9 +18,9 @@
         </div>
         <div class="div_form_holder">
             <form action="play" method="post">
-                <label for="guess">Enter your guess:</label>
+                <label id="enter_guess" for="guess">Enter your guess:</label>
                 <input id="guess" type="number" name="guess" required="required"/>
-                <input class="submit_btn" type="submit" value="Submit">
+                <input id="submit_btn" class="submit_btn" type="submit" value="Submit">
             </form>
         </div>
     </div>
