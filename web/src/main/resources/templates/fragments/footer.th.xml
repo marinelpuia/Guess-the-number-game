@@ -1,3 +1,4 @@
 <thlogic xmlns:th="http://www.thymeleaf.org">
     <attr sel="#footer_fragment_Id" th:fragment="footer"/>
+    <attr sel="#copywriter" th:text="#{game.copywriter}"/>
 </thlogic>

@@ -1,3 +1,4 @@
 <thlogic xmlns:th="http://www.thymeleaf.org">
     <attr sel="#head_fragment_Id" th:fragment="headFragment"/>
+    <attr sel="#title" th:text="#{game.title}"/>
 </thlogic>

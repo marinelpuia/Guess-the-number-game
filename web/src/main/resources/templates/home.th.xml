@@ -1,4 +1,5 @@
 <thlogic xmlns:th="http://www.thymeleaf.org">
     <attr sel="#head_Id" th:replace="~{fragments/head :: headFragment}"/>
+    <attr sel="#home_title" th:text=""/>
     <attr sel="#footer_Id" th:replace="~{fragments/footer :: footer}"/>
 </thlogic>
