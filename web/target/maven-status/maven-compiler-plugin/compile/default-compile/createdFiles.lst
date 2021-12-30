@@ -1,5 +1,6 @@
 org\marinel\util\GameMappings.class
 org\marinel\util\AttributeNames.class
+org\marinel\util\thymeleaf\DecoupledLogicSetup.class
 org\marinel\config\WebConfig.class
 org\marinel\service\GameService.class
 org\marinel\controller\GameController.class

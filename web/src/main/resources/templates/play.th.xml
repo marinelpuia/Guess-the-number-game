@@ -1,5 +1,6 @@
 <thlogic xmlns:th="http://www.thymeleaf.org">
     <attr sel="#head_Id" th:replace="~{fragments/head :: headFragment}"/>
+    <attr sel="game-title" th:text="#{game-title}"/>
     <attr sel="#main_Message" th:text="${mainMessage}"/>
     <attr sel="#result_Message" th:text="${resultMessage}"/>
     <attr sel="#footer_Id" th:replace="~{fragments/footer :: footer}"/>

@@ -1,10 +1,10 @@
 org\marinel\Game.class
-org\marinel\MessageGeneratorImpl.class
 org\marinel\GameImpl.class
-org\marinel\GuessCount.class
-org\marinel\NumberGeneratorImpl.class
 org\marinel\MessageGenerator.class
-org\marinel\config\GameConfig.class
 org\marinel\MinNumber.class
 org\marinel\MaxNumber.class
+org\marinel\MessageGeneratorImpl.class
+org\marinel\GuessCount.class
+org\marinel\NumberGeneratorImpl.class
+org\marinel\config\GameConfig.class
 org\marinel\NumberGenerator.class
