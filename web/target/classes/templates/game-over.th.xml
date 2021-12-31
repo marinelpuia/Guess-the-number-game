@@ -1,7 +1,10 @@
 <thlogic xmlns:th="http://www.thymeleaf.org">
     <attr sel="#head_Id" th:replace="~{fragments/head :: headFragment}"/>
+    <attr sel="#game_over_finished" th:text="#{game.over.finished}"/>
+    <attr sel="#game_title" th:text="#{game.title}"/>
+    <attr sel="#game_over" th:text="#{game.over}"/>
     <attr sel="#result_Message" th:text="${resultMessage}"/>
-    <attr sel="#restart_btn_Id" th:href="restart"/>
-    <attr sel="#home_btn_Id" th:href="@{/}"/>
-    <attr sel="#footer_btn_Id" th:replace="~{fragments/footer :: footer}"/>
+    <attr sel="#restart_btn_Id" th:href="restart" th:text="#{restart.btn.Id}"/>
+    <attr sel="#home_btn_Id" th:href="@{/}" th:text="#{home.btn.Id}"/>
+    <attr sel="#footer_Id" th:replace="~{fragments/footer :: footer}"/>
 </thlogic>

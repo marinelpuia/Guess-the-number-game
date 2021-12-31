@@ -1,5 +1,7 @@
 <thlogic xmlns:th="http://www.thymeleaf.org">
     <attr sel="#head_Id" th:replace="~{fragments/head :: headFragment}"/>
-    <attr sel="#home_title" th:text=""/>
+    <attr sel="#home_title" th:text="#{game.home.title}"/>
+    <attr sel="#enter_name" th:text="#{game.enter.name}"/>
+    <attr sel="#play_btn" th:value="#{game.play.btn}"/>
     <attr sel="#footer_Id" th:replace="~{fragments/footer :: footer}"/>
 </thlogic>
