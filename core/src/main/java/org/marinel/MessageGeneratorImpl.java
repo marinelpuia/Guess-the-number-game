@@ -2,6 +2,8 @@ package org.marinel;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -10,13 +12,18 @@ import javax.annotation.PostConstruct;
 @Component
 public class MessageGeneratorImpl implements MessageGenerator {
 
+    // == constants ==
+    public static final String MAIN_MESSAGE = "game.main.message";
     // == fields ==
     private final Game game;
+    // == use to inject message in the user interface
+    private final MessageSource messageSource;
 
     // == constructor ==
     @Autowired
-    public MessageGeneratorImpl(Game game) {
+    public MessageGeneratorImpl(Game game, MessageSource messageSource) {
         this.game = game;
+        this.messageSource = messageSource;
     }
 
     // == init method ==
@@ -34,7 +41,9 @@ public class MessageGeneratorImpl implements MessageGenerator {
 
     @Override
     public String getMainMessage() {
-        return game.getUserName()  + ", number is between " + game.getSmallest() + " and " + game.getBiggest() + ". Can you guess it?";
+        return getMessage(MAIN_MESSAGE, game.getSmallest(), game.getBiggest());
+//        return game.getUserName()  + ", number is between " + game.getSmallest() +
+//                " and " + game.getBiggest() + ". Can you guess it?";
     }
 
     @Override
@@ -56,5 +65,10 @@ public class MessageGeneratorImpl implements MessageGenerator {
             }
             return game.getUserName() + ", go " + direction + "! You have " + game.getRemainingGuesses() + " guesses left";
         }
+    }
+
+    // == get the message from the messages.properties file ==
+    private String getMessage(String code, Object... args) {
+        return messageSource.getMessage(code, args, LocaleContextHolder.getLocale());
     }
 }
