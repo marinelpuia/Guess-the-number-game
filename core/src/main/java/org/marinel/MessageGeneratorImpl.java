@@ -14,6 +14,9 @@ public class MessageGeneratorImpl implements MessageGenerator {
 
     // == constants ==
     public static final String MAIN_MESSAGE = "game.main.message";
+    public static final String RESULT_GAME_WIN = "game.win";
+    public static final String RESULT_GAME_LOSE = "game.lose";
+
     // == fields ==
     private final Game game;
     // == use to inject message in the user interface
@@ -42,17 +45,15 @@ public class MessageGeneratorImpl implements MessageGenerator {
     @Override
     public String getMainMessage() {
         return getMessage(MAIN_MESSAGE, game.getSmallest(), game.getBiggest());
-//        return game.getUserName()  + ", number is between " + game.getSmallest() +
-//                " and " + game.getBiggest() + ". Can you guess it?";
     }
 
     @Override
     public String getResultMessage() {
 
         if (game.isGameWon()) {
-            return game.getUserName() + ", you guessed it! The number was " + game.getNumber();
+            return game.getUserName() + getMessage(RESULT_GAME_WIN, game.getNumber());
         } else if (game.isGameLost()) {
-            return game.getUserName() + ", you lost. The number was " + game.getNumber();
+            return game.getUserName() + getMessage(RESULT_GAME_LOSE, game.getNumber());
         } else if (!game.isValidNumberRange()) {
             return game.getUserName() + ", it's invalid number range!";
         } else if (game.getRemainingGuesses() == game.getGuessCount()) {
