@@ -14,10 +14,15 @@ public class MessageGeneratorImpl implements MessageGenerator {
 
     // == constants ==
     public static final String MAIN_MESSAGE = "game.main.message";
-    public static final String RESULT_GAME_WIN = "game.win";
+    public static final String RESULT_GAME_WON = "game.won";
     public static final String RESULT_GAME_LOSE = "game.lose";
     public static final String RESULT_NUMBER_RANGE= "game.invalid.range";
     public static final String RESULT_FIRST_GUESS= "game.first.guess";
+    public static final String RESULT_LOWER = "game.lower";
+    public static final String RESULT_HIGHER= "game.higher";
+    public static final String RESULT_GO = "game.go";
+    public static final String RESULT_YOU_HAVE= "game.you.have";
+    public static final String RESULT_GUESSES_LEFT= "game.guesses.left";
 
     // == fields ==
     private final Game game;
@@ -53,20 +58,21 @@ public class MessageGeneratorImpl implements MessageGenerator {
     public String getResultMessage() {
 
         if (game.isGameWon()) {
-            return game.getUserName() + getMessage(RESULT_GAME_WIN, game.getNumber());
+            return game.getUserName() + getMessage(RESULT_GAME_WON, game.getNumber());
         } else if (game.isGameLost()) {
             return game.getUserName() + getMessage(RESULT_GAME_LOSE, game.getNumber());
         } else if (!game.isValidNumberRange()) {
             return game.getUserName() + getMessage(RESULT_NUMBER_RANGE, game.isValidNumberRange());
         } else if (game.getRemainingGuesses() == game.getGuessCount()) {
-            return game.getUserName() + ", what is your first guess?";
+            return game.getUserName() + getMessage(RESULT_FIRST_GUESS);
         } else {
-            String direction = "Lower";
+            String direction = getMessage(RESULT_LOWER);
 
             if (game.getGuess() < game.getNumber()) {
-                direction = "Higher";
+                direction = getMessage(RESULT_HIGHER);
             }
-            return game.getUserName() + ", go " + direction + "! You have " + game.getRemainingGuesses() + " guesses left";
+            return game.getUserName() + getMessage(RESULT_GO) + direction +
+                    getMessage(RESULT_YOU_HAVE) + game.getRemainingGuesses() + getMessage(RESULT_GUESSES_LEFT);
         }
     }
 
