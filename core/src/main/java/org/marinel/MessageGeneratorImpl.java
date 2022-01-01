@@ -16,6 +16,8 @@ public class MessageGeneratorImpl implements MessageGenerator {
     public static final String MAIN_MESSAGE = "game.main.message";
     public static final String RESULT_GAME_WIN = "game.win";
     public static final String RESULT_GAME_LOSE = "game.lose";
+    public static final String RESULT_NUMBER_RANGE= "game.invalid.range";
+    public static final String RESULT_FIRST_GUESS= "game.first.guess";
 
     // == fields ==
     private final Game game;
@@ -55,7 +57,7 @@ public class MessageGeneratorImpl implements MessageGenerator {
         } else if (game.isGameLost()) {
             return game.getUserName() + getMessage(RESULT_GAME_LOSE, game.getNumber());
         } else if (!game.isValidNumberRange()) {
-            return game.getUserName() + ", it's invalid number range!";
+            return game.getUserName() + getMessage(RESULT_NUMBER_RANGE, game.isValidNumberRange());
         } else if (game.getRemainingGuesses() == game.getGuessCount()) {
             return game.getUserName() + ", what is your first guess?";
         } else {
