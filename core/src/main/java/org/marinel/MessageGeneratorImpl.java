@@ -58,7 +58,7 @@ public class MessageGeneratorImpl implements MessageGenerator {
     public String getResultMessage() {
 
         if (game.isGameWon()) {
-            return game.getUserName() + getMessage(RESULT_GAME_WON, game.getNumber());
+            return game.getUserName() + getMessage(RESULT_GAME_WON, game.getNumber()) ;
         } else if (game.isGameLost()) {
             return game.getUserName() + getMessage(RESULT_GAME_LOSE, game.getNumber());
         } else if (!game.isValidNumberRange()) {
