@@ -20,13 +20,11 @@ public class MessageGeneratorImpl implements MessageGenerator {
     public static final String RESULT_FIRST_GUESS= "game.first.guess";
     public static final String RESULT_LOWER = "game.lower";
     public static final String RESULT_HIGHER= "game.higher";
-    public static final String RESULT_GO = "game.go";
-    public static final String RESULT_YOU_HAVE= "game.you.have";
     public static final String RESULT_GUESSES_LEFT= "game.guesses.left";
 
     // == fields ==
     private final Game game;
-    // == use to inject message in the user interface
+    // == use to inject message in the user interface see method getMessage() ==
     private final MessageSource messageSource;
 
     // == constructor ==
@@ -58,21 +56,19 @@ public class MessageGeneratorImpl implements MessageGenerator {
     public String getResultMessage() {
 
         if (game.isGameWon()) {
-            return game.getUserName() + getMessage(RESULT_GAME_WON, game.getNumber()) ;
+            return game.getUserName() + getMessage(RESULT_GAME_WON, game.getNumber());
         } else if (game.isGameLost()) {
             return game.getUserName() + getMessage(RESULT_GAME_LOSE, game.getNumber());
         } else if (!game.isValidNumberRange()) {
-            return game.getUserName() + getMessage(RESULT_NUMBER_RANGE, game.isValidNumberRange());
+            return game.getUserName() + getMessage(RESULT_NUMBER_RANGE);
         } else if (game.getRemainingGuesses() == game.getGuessCount()) {
             return game.getUserName() + getMessage(RESULT_FIRST_GUESS);
         } else {
             String direction = getMessage(RESULT_LOWER);
-
             if (game.getGuess() < game.getNumber()) {
                 direction = getMessage(RESULT_HIGHER);
             }
-            return game.getUserName() + getMessage(RESULT_GO) + direction +
-                    getMessage(RESULT_YOU_HAVE) + game.getRemainingGuesses() + getMessage(RESULT_GUESSES_LEFT);
+            return game.getUserName() + getMessage(RESULT_GUESSES_LEFT, direction, game.getRemainingGuesses());
         }
     }
 
