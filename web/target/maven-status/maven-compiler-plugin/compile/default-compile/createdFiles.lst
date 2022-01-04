@@ -2,6 +2,7 @@ org\marinel\util\GameMappings.class
 org\marinel\util\AttributeNames.class
 org\marinel\util\thymeleaf\DecoupledLogicSetup.class
 org\marinel\config\WebConfig.class
+org\marinel\interceptor\RequestInterceptor.class
 org\marinel\service\GameService.class
 org\marinel\controller\GameController.class
 org\marinel\service\GameServiceImpl.class
